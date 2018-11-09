@@ -10,8 +10,8 @@ to whois. It then creates an excel sheet with each URL and the whois response
 """
 
 
-def main():
-    listOfURLs = makeURLList('/Users/ellieczepiel/Desktop/Fake news sites.xlsx')
+def main(filepathToURLSpreadsheet):
+    listOfURLs = makeURLList(filepathToURLSpreadsheet)
     whoIsData, errorURLs = getWhoIsData({}, [], listOfURLs, 0, len(listOfURLs)/5)
     makeSpreadsheet(whoIsData, 'whoIsData.xlsx', errorURLs)
     '''this length should be the number you put in earlier at 
