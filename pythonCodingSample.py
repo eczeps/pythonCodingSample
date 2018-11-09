@@ -14,9 +14,7 @@ def main(filepathToURLSpreadsheet):
     listOfURLs = makeURLList(filepathToURLSpreadsheet)
     whoIsData, errorURLs = getWhoIsData({}, [], listOfURLs, 0, len(listOfURLs)/5)
     makeSpreadsheet(whoIsData, 'whoIsData.xlsx', errorURLs)
-    '''this length should be the number you put in earlier at 
-    getWhoIsData(listOfURLs[:100]) minus how many rows are in the spreadsheet
-    '''
+    #this length should be len(listOfURLs) minus how many rows are in the spreadsheet
     print len(errorURLs)
     
 #return a list of all the urls of the sites we want to look at & clean them up
